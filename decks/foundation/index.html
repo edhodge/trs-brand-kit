@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>TRS Golf — Brand Kit</title>
+<link rel="stylesheet" href="../../colors_and_type.css"/>
+<style>
+  :root{
+    --ink:#161616; --red:#cf2437; --grey-700:#5f5f5f; --grey-300:#e4e4e4;
+    --surface:#fff; --surface-2:#f7f7f7; --surface-3:#f3f3f3; --tint:#fff8f9;
+  }
+  html,body{margin:0;background:#0c0c0c;font-family:'Aeonik',Aeonik,sans-serif;color:var(--ink)}
+  deck-stage > section{width:1920px;height:1080px;position:relative;overflow:hidden;background:#fff}
+  .slide-num{position:absolute;left:64px;bottom:48px;font-family:Aeonik;font-size:14px;letter-spacing:.08em;color:var(--grey-700);font-weight:500;text-transform:uppercase}
+  .brand-mark{position:absolute;right:64px;bottom:48px;height:24px;display:flex;align-items:center}
+  .brand-mark img{height:100%;width:auto;display:block;filter:invert(1)}
+  .cover .brand-mark img{filter:none}
+  .eyebrow{font-family:Aeonik;font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin:0}
+  h2.section{font-family:Aeonik;font-weight:500;font-size:84px;line-height:.95;letter-spacing:-.025em;margin:0;color:var(--ink)}
+  .pad{padding:96px 128px}
+  .lede{font-family:Aeonik;font-weight:400;font-size:22px;line-height:1.5;color:#1c1c1c;max-width:1100px;margin:24px 0 0}
+  .meta{font-family:Aeonik;font-size:13px;letter-spacing:.06em;color:var(--grey-700);text-transform:uppercase}
+
+  /* 01 cover */
+  .cover{background:#0c0c0c;color:#fff;overflow:hidden}
+  .cover .pad{height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-end;position:relative;z-index:2}
+  .cover .meta{color:#969696}
+  .cover .rule{width:240px;height:14px;background:var(--red);margin-bottom:48px}
+  .cover h1{font-family:Aeonik;font-weight:500;font-size:220px;letter-spacing:-.035em;margin:0;color:#fff;line-height:.88}
+  .cover .corner{position:absolute;left:128px;right:128px;top:96px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;color:#969696;font-family:Aeonik;font-size:14px;letter-spacing:.08em;text-transform:uppercase;z-index:3}
+  .cover .corner > :nth-child(1){justify-self:start}
+  .cover .corner > :nth-child(3){justify-self:end}
+  .cover .corner .cover-logo{display:block;height:30px;width:auto}
+  .cover .corner span b{color:#fff;font-weight:500;letter-spacing:.04em}
+
+  /* 02 contents */
+  .toc{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 64px;margin-top:48px}
+  .toc-row{display:grid;grid-template-columns:60px 1fr 80px;gap:18px;align-items:baseline;border-top:1px solid var(--grey-300);padding-top:14px;font-family:Aeonik;font-size:24px;color:var(--ink)}
+  .toc-row .n{font-family:Aeonik;font-size:14px;color:var(--red);font-weight:700;letter-spacing:.04em}
+  .toc-row .p{font-family:Aeonik;font-size:13px;color:var(--grey-700);text-align:right;letter-spacing:.04em}
+
+  /* 03 logo */
+  .logo-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;margin-top:32px;align-items:stretch}
+  .logo-stage{background:#3E3E3E;display:flex;align-items:center;justify-content:center;padding:48px;min-height:300px}
+  .logo-stage .wm{height:130px;display:flex;align-items:center}
+  .logo-stage .wm img{height:100%;width:auto;display:block}
+  .logo-formats{display:grid;grid-template-columns:2fr 1fr 2fr;gap:14px;margin-top:18px}
+  .logo-fmt{position:relative;display:flex;align-items:center;justify-content:center;background:#f7f7f7;border:1px solid var(--grey-300);overflow:hidden}
+  .logo-fmt img{display:block;width:100%;height:auto}
+  .logo-fmt .lbl{position:absolute;left:10px;bottom:10px;font-family:Aeonik;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey-700);background:#fff;padding:4px 8px;border:1px solid var(--grey-300)}
+  .logo-fmt.tp{background-color:#9a9a9a;background-image:linear-gradient(45deg,#7a7a7a 25%,transparent 25%),linear-gradient(-45deg,#7a7a7a 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#7a7a7a 75%),linear-gradient(-45deg,transparent 75%,#7a7a7a 75%);background-size:24px 24px;background-position:0 0,0 12px,12px -12px,-12px 0}
+  .logo-fmt.tp .lbl{background:rgba(255,255,255,.92);border-color:transparent}
+  .logo-side{display:flex;flex-direction:column;gap:16px}
+  .logo-side .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .logo-mini{background:#fff;border:1px solid var(--grey-300);height:120px;display:flex;align-items:center;justify-content:center}
+  .logo-mini.dk{background:#3E3E3E}
+  .logo-mini .wm{height:56px;display:flex;align-items:center}
+  .logo-mini .wm img{height:100%;width:auto;display:block}
+  .logo-mini:not(.dk) .wm img{filter:invert(1)}
+  .logo-side .note{font-family:Aeonik;font-size:17px;color:var(--grey-700);line-height:1.45}
+  .donts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px}
+  .dont{border:1px solid var(--grey-300);padding:0}
+  .dont .stage{height:120px;background:#3E3E3E;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .dont .stage img{height:48px;width:auto;display:block}
+  .dont .cross{position:absolute;inset:12px;border:2px solid var(--red);pointer-events:none}
+  .dont .cross::before,.dont .cross::after{content:"";position:absolute;left:-2px;right:-2px;top:50%;height:2px;background:var(--red);transform-origin:center}
+  .dont .cross::before{transform:rotate(8deg) scaleX(1.4)}
+  .dont .cross::after{display:none}
+  .dont .cap{padding:14px 16px;font-family:Aeonik;font-size:15px;line-height:1.4;color:var(--ink)}
+  .dont .cap b{font-family:Aeonik;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-weight:700;display:block;margin-bottom:4px}
+
+  /* 05 colour */
+  .swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:48px}
+  .sw{display:flex;flex-direction:column;gap:10px}
+  .sw .chip{height:200px}
+  .sw .name{font-family:Aeonik;font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .sw .hex{font-family:Aeonik;font-size:13px;color:var(--grey-700);letter-spacing:.04em;text-transform:uppercase}
+  .sw .use{font-family:Aeonik;font-size:14px;color:var(--grey-700);line-height:1.4}
+  .col-row-2{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+  .neut{display:flex;flex-direction:column;gap:6px}
+  .neut .chip{height:120px;border:1px solid #00000010}
+
+  /* 05 colour usage */
+  .usage-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 64px;margin-top:48px}
+  .urow{display:grid;grid-template-columns:64px 1fr;column-gap:24px;row-gap:6px;padding:20px 0;border-bottom:1px solid var(--grey-300);align-items:start}
+  .urow .ck{width:64px;height:64px;grid-row:1 / span 2}
+  .urow .uname{font-family:Aeonik;font-weight:500;font-size:22px;letter-spacing:-.02em;color:var(--ink);align-self:end}
+  .urow .udesc{font-family:Aeonik;font-size:16px;line-height:1.45;color:var(--grey-700)}
+  .urow .udesc b{color:var(--ink);font-weight:500}
+
+  /* 07 type */
+  .type-stack{display:flex;flex-direction:column;gap:30px;margin-top:48px}
+  .type-row{display:grid;grid-template-columns:160px 1fr 240px;align-items:baseline;gap:28px;border-top:1px solid var(--grey-300);padding-top:18px}
+  .type-row .tk{font-family:Aeonik;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-700)}
+  .type-row .sample{font-family:Aeonik;color:var(--ink);letter-spacing:-.02em;line-height:1}
+  .type-row .spec{font-family:Aeonik;font-size:13px;letter-spacing:.04em;color:var(--grey-700);text-align:right}
+  .type-row .body{font-family:Aeonik;font-size:18px;line-height:1.5;color:#1c1c1c;letter-spacing:0}
+  .type-row .eb{font-family:Aeonik;font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+
+  /* 08 casing */
+  .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+  .case-card{padding:32px;border:1px solid var(--grey-300)}
+  .case-card .lbl{font-family:Aeonik;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-weight:700}
+  .case-card .show{margin:18px 0 12px;font-family:Aeonik;color:var(--ink);letter-spacing:-.02em}
+  .case-card .show.h{font-size:38px;font-weight:500;line-height:1}
+  .case-card .show.s{font-size:22px;font-weight:400;letter-spacing:0}
+  .case-card .show.c{font-size:22px;font-weight:700;letter-spacing:0;text-transform:uppercase}
+  .case-card p{font-family:Aeonik;font-size:16px;line-height:1.5;color:var(--grey-700);margin:0}
+
+  /* 09 spacing */
+  .spacing-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;margin-top:48px;align-items:end}
+  .bars{display:flex;align-items:flex-end;gap:14px;height:380px;border-bottom:1px solid var(--grey-300)}
+  .bar{display:flex;flex-direction:column;align-items:center;gap:10px}
+  .bar .b{background:var(--red);width:46px}
+  .bar .v{font-family:Aeonik;font-size:13px;color:var(--grey-700);letter-spacing:.04em}
+  .bar.star .b{background:var(--ink)}
+  .bar.star .v{color:var(--ink);font-weight:700}
+  .space-side ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;font-family:Aeonik;font-size:22px;line-height:1.45;color:#1c1c1c}
+  .space-side li b{display:inline-block;min-width:120px;font-family:Aeonik;font-size:14px;color:var(--red);letter-spacing:.04em;font-weight:700;text-transform:uppercase}
+
+  /* 08 spacing — real-world list */
+  .space-real{display:flex;flex-direction:column;margin-top:32px}
+  .space-real-row{display:grid;grid-template-columns:64px 220px 1fr;align-items:center;gap:24px;padding:14px 0;border-top:1px solid var(--grey-300)}
+  .space-real-row .srk{font-family:Aeonik;font-weight:700;font-size:22px;color:var(--red);letter-spacing:-.01em}
+  .space-real-row .srbar{height:14px;background:var(--red)}
+  .space-real-row.star .srk{color:var(--ink)}
+  .space-real-row.star .srbar{background:var(--ink);height:18px}
+  .space-real-row .srdesc{font-family:Aeonik;font-size:16px;line-height:1.45;color:#1c1c1c}
+  .space-real-row .srdesc b{font-weight:700;color:var(--ink);margin-right:6px}
+
+  /* 10 corners */
+  .rad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:48px}
+  .rad{display:flex;flex-direction:column;gap:14px}
+  .rad .demo{height:140px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:Aeonik;font-size:14px;letter-spacing:.04em}
+  .rad .lbl{font-family:Aeonik;font-weight:700;font-size:18px;color:var(--ink)}
+  .rad .use{font-family:Aeonik;font-size:16px;color:var(--grey-700);line-height:1.45}
+
+  /* 11 buttons */
+  .comp-block{margin-top:48px;display:flex;flex-direction:column;gap:36px}
+  .comp-row{display:flex;align-items:center;gap:36px;flex-wrap:wrap;border-top:1px solid var(--grey-300);padding-top:28px}
+  .comp-label{flex:0 0 220px;font-family:Aeonik;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-700)}
+  .btn-big{height:64px;padding:0 36px;font-family:Aeonik;font-weight:700;font-size:18px;letter-spacing:-.02em;text-transform:uppercase;border-radius:2px;cursor:default;display:inline-flex;align-items:center;gap:14px}
+  .btn-big.primary{background:var(--red);color:#fff;border:1px solid #9c1827}
+  .btn-big.secondary{background:#fff;color:var(--ink);border:1px solid var(--ink)}
+  .btn-big.dark{background:var(--ink);color:#fff;border:1px solid #000}
+  .pill-big{height:52px;padding:0 24px;border-radius:9999px;font-family:Aeonik;font-weight:500;font-size:18px;display:inline-flex;align-items:center;cursor:default}
+  .pill-big.on{background:var(--ink);color:#fff;border:1px solid var(--ink)}
+  .pill-big.off{background:#fff;color:var(--ink);border:1px solid rgba(0,0,0,.55)}
+  .badge-big{display:inline-flex;align-items:center;height:32px;padding:0 16px;border-radius:9999px;font-family:Aeonik;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+  .badge-big.r{background:var(--red);color:#fff}
+  .badge-big.k{background:var(--ink);color:#fff}
+
+  /* voice */
+  .voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  .voice-card{padding:32px;border:1px solid var(--grey-300);display:flex;flex-direction:column;gap:18px}
+  .voice-card h4{margin:0;font-family:Aeonik;font-weight:700;font-size:26px;letter-spacing:-.02em;color:var(--ink)}
+  .voice-card .lede{font-family:Aeonik;font-size:18px;line-height:1.5;color:var(--grey-700);margin:0;max-width:none}
+  .voice-card .pair{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+  .voice-card .pair .row{display:grid;grid-template-columns:60px 1fr;gap:14px;align-items:baseline}
+  .voice-card .pair .row .tag{font-family:Aeonik;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+  .voice-card .pair .row.do .tag{color:#1a8c1a}
+  .voice-card .pair .row.dont .tag{color:var(--red)}
+  .voice-card .pair .row .ex{font-family:Aeonik;font-size:18px;color:var(--ink);line-height:1.45}
+  .voice-card .pair .row.dont .ex{color:var(--grey-700);text-decoration:line-through;text-decoration-color:rgba(207,36,55,.5)}
+
+  /* brand in action */
+  .ba-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:28px;align-items:start}
+  .ba-stage{background:var(--surface-2);padding:28px;display:flex;flex-direction:column;gap:12px}
+  .ba-stage .row1{font-family:Aeonik;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-weight:700;display:flex;align-items:center;gap:10px}
+  .ba-stage .row1 .stars{display:inline-flex;gap:3px}
+  .ba-stage .row1 .stars svg{width:14px;height:14px}
+  .ba-stage h3{margin:0;font-family:Aeonik;font-weight:500;font-size:46px;letter-spacing:-.025em;line-height:1;color:var(--ink)}
+  .ba-stage .sub{font-family:Aeonik;font-size:16px;color:var(--grey-700);margin:0;line-height:1.4}
+  .ba-stage .ph{aspect-ratio:16/9;background:#fff;border:1px solid var(--grey-300);overflow:hidden;max-height:240px}
+  .ba-stage .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ba-stage .pills{display:flex;gap:8px;margin-top:4px}
+  .ba-stage .pills .p{height:34px;padding:0 16px;border-radius:9999px;display:inline-flex;align-items:center;font-family:Aeonik;font-weight:500;font-size:13px;border:1px solid rgba(0,0,0,.55);background:#fff}
+  .ba-stage .pills .p.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .ba-stage .cta{height:48px;border:1px solid #9c1827;background:var(--red);color:#fff;font-family:Aeonik;font-weight:700;font-size:15px;letter-spacing:-.02em;text-transform:uppercase;display:inline-flex;align-items:center;justify-content:center;border-radius:2px;width:100%}
+  .ba-stage .stk{font-family:Aeonik;font-size:14px;color:var(--ink);display:flex;align-items:center;gap:10px}
+  .ba-stage .stk .d{position:relative;width:14px;height:14px}
+  .ba-stage .stk .d .h{position:absolute;inset:0;border-radius:9999px;background:rgba(92,211,63,.25)}
+  .ba-stage .stk .d .c{position:absolute;left:4px;top:4px;width:6px;height:6px;border-radius:9999px;background:#5cd33f}
+  .ba-callouts{display:flex;flex-direction:column;gap:10px}
+  .callout{display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:start;border-top:1px solid var(--grey-300);padding-top:12px}
+  .callout .num{font-family:Aeonik;font-size:14px;color:var(--red);font-weight:700;letter-spacing:.04em}
+  .callout .body b{font-family:Aeonik;font-weight:700;font-size:17px;color:var(--ink);display:block;margin-bottom:2px}
+  .callout .body span{font-family:Aeonik;font-size:15px;color:var(--grey-700);line-height:1.4}
+
+  /* 12 pricing */
+  .pack-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+  .pack{position:relative;background:#fff;border:1px solid var(--grey-300);border-radius:8px;padding:32px 28px}
+  .pack.sel{border:2px solid var(--red);background:var(--tint);padding:31px 27px}
+  .pack .b{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-family:Aeonik;font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:8px 16px;border-radius:9999px;white-space:nowrap}
+  .pack .b.dk{background:var(--ink)}
+  .pack .ph{height:140px;background:var(--surface-3);display:flex;align-items:center;justify-content:center;color:#969696;font-family:Aeonik;font-size:14px;margin-bottom:18px;letter-spacing:.04em}
+  .pack h4{margin:0 0 4px;font-family:Aeonik;font-weight:700;font-size:24px;color:var(--ink)}
+  .pack p{margin:0;font-family:Aeonik;font-size:16px;color:#5f5f5f}
+  .pack .save{margin-top:10px;font-family:Aeonik;font-weight:700;font-size:14px;color:var(--red);letter-spacing:.04em;text-transform:uppercase}
+
+  /* 13 review/stock */
+  .ev-block{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:48px}
+  .ev-card{padding:36px;border:1px solid var(--grey-300);background:#fff;display:flex;flex-direction:column;gap:18px}
+  .ev-card h5{font-family:Aeonik;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin:0}
+  .ev-card .row1{display:flex;align-items:center;gap:14px;font-family:Aeonik;font-size:22px;color:var(--ink)}
+  .ev-card .row1 .stars{display:inline-flex;gap:4px}
+  .ev-card .row1 .stars svg{width:28px;height:28px}
+  .ev-card .row1 b{font-weight:700}
+  .ev-card .stock{display:flex;align-items:center;gap:14px;font-family:Aeonik;font-size:22px;color:var(--ink)}
+  .ev-card .stock .dot{position:relative;width:22px;height:22px}
+  .ev-card .stock .dot .halo{position:absolute;inset:0;border-radius:9999px;background:rgba(92,211,63,.25)}
+  .ev-card .stock .dot .core{position:absolute;left:7px;top:7px;width:8px;height:8px;border-radius:9999px;background:#5cd33f}
+
+  /* 14 imagery */
+  .img-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;align-items:start}
+  .img-box{aspect-ratio:4/3;background:var(--surface-3);overflow:hidden}
+  .img-box img{width:100%;height:100%;object-fit:cover;display:block}
+  .img-meta{font-family:Aeonik;font-size:18px;color:var(--grey-700);line-height:1.5;margin-top:12px}
+  .img-meta b{color:var(--ink);font-weight:700}
+
+  /* 15 files */
+  .files-list{display:grid;grid-template-columns:1fr 1fr;gap:14px 36px;margin-top:48px}
+  .files-list .file{padding:22px 24px;border:1px solid var(--grey-300);font-family:Aeonik;font-size:20px;color:var(--ink);display:flex;justify-content:space-between;align-items:baseline;gap:24px}
+  .files-list .file b{font-family:Aeonik;color:var(--red);font-size:16px;letter-spacing:.04em}
+  .files-list .file span{font-size:16px;color:var(--grey-700)}
+</style>
+</head>
+<body>
+
+<template id="__bundler_thumbnail" data-bg-color="#0c0c0c">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0c0c0c"/>
+    <rect x="120" y="430" width="200" height="14" fill="#cf2437"/>
+    <text x="120" y="640" font-family="Aeonik, Helvetica, sans-serif" font-weight="500" font-size="170" fill="#ffffff" letter-spacing="-6">TRS Golf</text>
+    <text x="120" y="730" font-family="Aeonik, Helvetica, sans-serif" font-weight="500" font-size="80" fill="#ffffff" letter-spacing="-2">Brand Kit</text>
+  </svg>
+</template>
+
+<deck-stage width="1920" height="1080">
+
+  <!-- 01 — Cover -->
+  <section class="cover" data-screen-label="01 Cover">
+    <div class="corner">
+      <span><b>TRS Golf</b> — Design system</span>
+      <img src="trs-logo.svg" alt="TRS Golf" class="cover-logo"/>
+      <span>v1.0 · April 2026</span>
+    </div>
+    <div class="pad" style="padding-bottom:128px">
+      <div class="rule"></div>
+      <h1>TRS Golf<br/>Brand Kit</h1>
+    </div>
+  </section>
+
+  <!-- 02 — Contents -->
+  <section data-screen-label="02 Contents">
+    <div class="pad">
+      <p class="eyebrow">Contents</p>
+      <h2 class="section" style="margin-top:18px">Contents.</h2>
+      <div class="toc">
+        <div class="toc-row"><div class="n">03</div><div>Logo rules</div><div class="p">Brand</div></div>
+        <div class="toc-row"><div class="n">04</div><div>Colour palette</div><div class="p">Tokens</div></div>
+        <div class="toc-row"><div class="n">05</div><div>Colour usage</div><div class="p">Tokens</div></div>
+        <div class="toc-row"><div class="n">06</div><div>Type ramp</div><div class="p">Type</div></div>
+        <div class="toc-row"><div class="n">07</div><div>Casing rules</div><div class="p">Type</div></div>
+        <div class="toc-row"><div class="n">08</div><div>Spacing scale</div><div class="p">Layout</div></div>
+        <div class="toc-row"><div class="n">09</div><div>Corners, borders, shadows</div><div class="p">Layout</div></div>
+        <div class="toc-row"><div class="n">10</div><div>Buttons, pills, badges</div><div class="p">Components</div></div>
+        <div class="toc-row"><div class="n">11</div><div>Pricing pack card</div><div class="p">Components</div></div>
+        <div class="toc-row"><div class="n">12</div><div>Rating &amp; stock</div><div class="p">Components</div></div>
+        <div class="toc-row"><div class="n">13</div><div>Imagery — do &amp; don’t</div><div class="p">Brand</div></div>
+        <div class="toc-row"><div class="n">14</div><div>Brand in action</div><div class="p">Reference</div></div>
+        <div class="toc-row"><div class="n">15</div><div>Files in this kit</div><div class="p">Reference</div></div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 15</div>
+    <div class="brand-mark"><img src="trs-logo.svg" alt="TRS"/></div>
+  </section>
+
+  <!-- 03 — Logo -->
+  <section data-screen-label="03 Logo">
+    <div class="pad">
+      <p class="eyebrow">Logo</p>
+      <h2 class="section" style="margin-top:18px">Logo rules.</h2>
+      <div class="logo-grid">
+        <div>
+          <div class="logo-stage">
+            <div class="wm"><img src="trs-logo.svg" alt="TRS Golf logo"/></div>
+          </div>
+          <div class="logo-formats">
+            <div class="logo-fmt"><img src="trs-logo-rect.svg" alt="Rectangle 2:1"/><span class="lbl">Rectangle · 2:1</span></div>
+            <div class="logo-fmt"><img src="trs-logo-square.svg" alt="Square 1:1"/><span class="lbl">Square · 1:1</span></div>
+            <div class="logo-fmt tp"><img src="trs-logo.svg" alt="Transparent"/><span class="lbl">Transparent</span></div>
+          </div>
+        </div>
+        <div class="logo-side">
+          <div class="note">Master logo: white wordmark with a horizontal red bar beneath. Designed to sit on the brand charcoal (<code style="font-family:Aeonik;color:var(--red)">#3E3E3E</code>) or any dark surface. A light-surface (ink-on-white) version is not supplied; don’t recolour the master to fake one.</div>
+          <div class="note" style="border-top:1px solid var(--grey-300);padding-top:18px">Files supplied (SVG, vector): <code style="font-family:Aeonik;color:var(--red)">assets/trs-logo.svg</code> (transparent) · <code style="font-family:Aeonik;color:var(--red)">assets/trs-logo-rect.svg</code> (rectangle, 2:1) · <code style="font-family:Aeonik;color:var(--red)">assets/trs-logo-square.svg</code> (square, 1:1).</div>
+        </div>
+      </div>
+      <div class="donts">
+        <div class="dont">
+          <div class="stage"><img src="trs-logo.svg" alt="" style="transform:rotate(-12deg)"/><div class="cross"></div></div>
+          <div class="cap"><b>Don’t</b>Rotate or skew the wordmark.</div>
+        </div>
+        <div class="dont">
+          <div class="stage" style="background:#f3f3f3"><img src="trs-logo.svg" alt="" style="filter:invert(1)"/><div class="cross"></div></div>
+          <div class="cap"><b>Don’t</b>Invert to ink-on-white. No light-surface master exists.</div>
+        </div>
+        <div class="dont">
+          <div class="stage" style="background:#5cd33f"><img src="trs-logo.svg" alt=""/><div class="cross"></div></div>
+          <div class="cap"><b>Don’t</b>Place on any colour other than charcoal or ink.</div>
+        </div>
+        <div class="dont">
+          <div class="stage"><img src="trs-logo.svg" alt="" style="transform:scaleX(1.6)"/><div class="cross"></div></div>
+          <div class="cap"><b>Don’t</b>Stretch, squash, or recolour the red bar.</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 15 — Logo</div>
+    <div class="brand-mark"><img src="trs-logo.svg" alt="TRS"/></div>
+  </section>
+
+  <!-- 04 — Colour palette -->
+  <section data-screen-label="04 Colour">
+    <div class="pad">
+      <p class="eyebrow">Colour palette</p>
+
+      <p class="meta" style="margin-top:36px">Red — our signature</p>
+      <div class="swatches" style="grid-template-columns:repeat(4,1fr);margin-top:18px">
+        <div class="sw"><div class="chip" style="background:#cf2437"></div><div class="name">Red</div><div class="hex">#cf2437</div><div class="use">Primary CTA, badges, stars, the red bar in the logo.</div></div>
+        <div class="sw"><div class="chip" style="background:#fc364c"></div><div class="name">Red — Bright</div><div class="hex">#fc364c</div><div class="use">Theme button red (Shopify token).</div></div>
+        <div class="sw"><div class="chip" style="background:#9c1827"></div><div class="name">Red — Dark</div><div class="hex">#9c1827</div><div class="use">1px border under red CTAs.</div></div>
+        <div class="sw"><div class="chip" style="background:#fff8f9;border:1px solid #e4e4e4"></div><div class="name">Red — Tint</div><div class="hex">#fff8f9</div><div class="use">Selected pricing-pack fill.</div></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:36px">
+        <div>
+          <p class="meta">Black, white &amp; greys — surfaces and text</p>
+          <div class="swatches" style="grid-template-columns:repeat(4,1fr);margin-top:18px;gap:12px">
+            <div class="sw"><div class="chip" style="background:#161616;height:120px"></div><div class="name" style="font-size:15px">Ink</div><div class="hex" style="font-size:11px">#161616</div></div>
+            <div class="sw"><div class="chip" style="background:#ffffff;height:120px;border:1px solid #e4e4e4"></div><div class="name" style="font-size:15px">White</div><div class="hex" style="font-size:11px">#ffffff</div></div>
+            <div class="sw"><div class="chip" style="background:#f7f7f7;height:120px"></div><div class="name" style="font-size:15px">Surface 2</div><div class="hex" style="font-size:11px">#f7f7f7</div></div>
+            <div class="sw"><div class="chip" style="background:#f3f3f3;height:120px"></div><div class="name" style="font-size:15px">Surface 3</div><div class="hex" style="font-size:11px">#f3f3f3</div></div>
+          </div>
+        </div>
+        <div>
+          <p class="meta">Green &amp; grey — narrow use only</p>
+          <div class="swatches" style="grid-template-columns:repeat(2,1fr);margin-top:18px;gap:12px">
+            <div class="sw"><div class="chip" style="background:#5cd33f;height:120px"></div><div class="name" style="font-size:15px">Stock green</div><div class="hex" style="font-size:11px">#5cd33f</div><div class="use" style="font-size:13px">In-stock dot only. Nothing else.</div></div>
+            <div class="sw"><div class="chip" style="background:#5f5f5f;height:120px"></div><div class="name" style="font-size:15px">Grey 700</div><div class="hex" style="font-size:11px">#5f5f5f</div><div class="use" style="font-size:13px">Captions and metadata only.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 15 — Colour</div>
+    <div class="brand-mark"><img src="trs-logo.svg" alt="TRS"/></div>
+  </section>
+
+  <!-- 05 — Colour usage (factual) -->
+  <section data-screen-label="05 Colour usage">
+    <div class="pad">
+      <p class="eyebrow">Colour usage</p>
+      <h2 class="section" style="margin-top:18px">Where each colour belongs.</h2>
+      <div class="usage-grid">
+        <div class="urow"><div class="ck" style="background:#cf2437"></div><div class="uname">Red</div><div class="udesc">Primary CTAs, announcement bar, rating stars, badge pills, the red bar in the logo, selected-card border.</div></div>
+        <div class="urow"><div class="ck" style="background:#161616"></div><div class="uname">Ink</div><div class="udesc">All body and headline text. Dark CTAs (<b>Shop now</b>). Footer surface.</div></div>
+        <div class="urow"><div class="ck" style="background:#ffffff;border:1px solid #e4e4e4"></div><div class="uname">White</div><div class="udesc">Default page surface. Text on red and ink fills.</div></div>
+        <div class="urow"><div class="ck" style="background:#f7f7f7"></div><div class="uname">Surface 2 / 3</div><div class="udesc">Section backgrounds and image placeholders inside cards.</div></div>
+        <div class="urow"><div class="ck" style="background:#5cd33f"></div><div class="uname">Stock green</div><div class="udesc">In-stock dot only. Nothing else uses this colour.</div></div>
+        <div class="urow"><div class="ck" style="background:#fff8f9;border:1px solid #e4e4e4"></div><div class="uname">Red tint</div><div class="udesc">Selected pricing-pack card fill, paired with the 2px red border.</div></div>
+        <div class="urow"><div class="ck" style="background:#5f5f5f"></div><div class="uname">Grey 700</div><div class="udesc">Captions and metadata only. Default body copy stays ink.</div></div>
+        <div class="urow"><div class="ck" style="background:linear-gradient(90deg,#cf2437,#fc364c);position:relative"><div style="position:absolute;inset:0;background:linear-gradient(135deg,transparent 46%,#161616 47%,#161616 53%,transparent 54%)"></div></div><div class="uname">No gradients</div><div class="udesc">Backgrounds are always flat solids. Never blend two brand colours.</div></div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 15 — Colour usage</div>
+    <div class="brand-mark"><img src="trs-logo.svg" alt="TRS"/></div>
+  </section>
+
+  <!-- 06 — Type ramp -->
+  <section data-screen-label="06 Type ramp">
+    <div class="pad">
+      <p class="eyebrow">Typography</p>
+      <h2 class="section" style="margin-top:18px">Aeonik.</h2>
+      <div class="type-stack">
+        <div class="type-row"><div class="tk">H1</div><div class="sample" style="font-size:96px;font-weight:500">TRS Slider</div><div class="spec">96 / 92 · 500 · −2%</div></div>
+        <div class="type-row"><div class="tk">H2</div><div class="sample" style="font-size:64px;font-weight:500">Choose your slider size</div><div class="spec">64 / 64 · 500 · −2%</div></div>
+        <div class="type-row"><div class="tk">H3</div><div class="sample" style="font-size:36px;font-weight:500">Designed by Robert Rock</div><div class="spec">36 / 38 · 500 · −2%</div></div>
+        <div class="type-row"><div class="tk">Body Lg</div><div class="sample body">Designed in collaboration with Robert Rock. Used on tour by Tommy Fleetwood and Cam Smith.</div><div class="spec">22 / 32 · 400 · 0%</div></div>
+        <div class="type-row"><div class="tk">Body</div><div class="sample body" style="font-size:18px;line-height:28px">In stock — delivered to you by January 01. 60-day money-back guarantee on every order.</div><div class="spec">18 / 28 · 400 · 0%</div></div>
+        <div class="type-row"><div class="tk">CTA</div><div class="sample" style="font-size:22px;font-weight:700;text-transform:uppercase">Add to cart</div><div class="spec">22 / 22 · 700 · −2%</div></div>
+        <div class="type-row"><div class="tk">Eyebrow / Mono</div><div class="sample eb">Free shipping on UK orders over £50</div><div class="spec">Aeonik · 14 · 700 · +16%</div></div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 15 — Type ramp</div>
+    <div class="brand-mark"><img src="trs-logo.svg" alt="TRS"/></div>
+  </section>
+
+  <!-- 07 — Casing -->
+  <section data-screen-label="07 Casing">
+    <div class="pad">
+      <p class="eyebrow">Casing</p>
+      <h2 class="section" style="margin-top:18px">One casing per surface.</h2>
+      <div class="case-grid">
+        <div class="case-card">
+          <div class="lbl">H1 — Title Case</div>
+          <div class="show h">TRS Slider</div>
+          <p>Product names and marketing headlines. Set in Aeonik 500.</p>
+        </div>
+        <div class="case-card">
+          <div class="lbl">Body — Sentence case</div>
+          <div class="show s">In stock — delivered to you by January 01.</div>
+          <p>Default for everything below H1.</p>
+        </div>
+        <div class="case-card">
+          <div class="lbl">CTA — UPPERCASE</div>
+          <div class="show c">Add to cart</div>
+          <p>Primary actions and capsule badges. Letter-spacing −2%.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">07 / 15 — Casing</div>
+    <div class="brand-mark"><img src="trs-logo.svg" alt="TRS"/></div>
+  </section>
+
+  <!-- 08 — Spacing -->
+  <section data-screen-label="08 Spacing">
+    <div class="pad">
+      <p class="eyebrow">Spacing</p>
+      <h2 class="section" style="margin-top:18px">4px base. 50px section anchor.</h2>
+      <p class="lede" style="margin-top:24px">Every gap, padding and offset is a multiple of 4. Below: the scale, with the real surface each step belongs to.</p>
+      <div class="space-real">
+        <div class="space-real-row"><div class="srk">4</div><div class="srbar" style="width:8px"></div><div class="srdesc"><b>Hairline gaps.</b> Star-rating dot to text. Stock dot to "In stock" label.</div></div>
+        <div class="space-real-row"><div class="srk">8</div><div class="srbar" style="width:16px"></div><div class="srdesc"><b>Tight pairs.</b> Variant pill internal padding. Grid gutter between product cards.</div></div>
+        <div class="space-real-row"><div class="srk">12</div><div class="srbar" style="width:24px"></div><div class="srdesc"><b>Inline spacing.</b> Icon to label inside CTAs. "Free shipping" eyebrow lockup.</div></div>
+        <div class="space-real-row"><div class="srk">16</div><div class="srbar" style="width:32px"></div><div class="srdesc"><b>Component padding.</b> Inside pricing-pack cards. Between FAQ rows. Header nav-link gap.</div></div>
+        <div class="space-real-row"><div class="srk">24</div><div class="srbar" style="width:48px"></div><div class="srdesc"><b>Stack rhythm.</b> H1 to lede. Lede to first paragraph. Above the Add-to-cart row on PDP.</div></div>
+        <div class="space-real-row"><div class="srk">32</div><div class="srbar" style="width:64px"></div><div class="srdesc"><b>Group separation.</b> Between buy-box and trust list. Above star rating on review cards.</div></div>
+        <div class="space-real-row"><div class="srk">40</div><div class="srbar" style="width:80px"></div><div class="srdesc"><b>Sub-section break.</b> Between pricing packs and variant picker. Pack row top margin.</div></div>
+        <div class="space-real-row star"><div class="srk">50</div><div class="srbar" style="width:100px"></div><div class="srdesc"><b>Section anchor.</b> Top &amp; bottom padding on every full-width section (hero, pricing, FAQ, footer).</div></div>
+        <div class="space-real-row"><div class="srk">64</div><div class="srbar" style="width:128px"></div><div class="srdesc"><b>Hero stack.</b> Between hero copy and the buy panel on desktop PDP.</div></div>
+        <div class="space-real-row"><div class="srk">120</div><div class="srbar" style="width:200px"></div><div class="srdesc"><b>Page-level break.</b> Major editorial gap, e.g. between "Designed by Robert Rock" and the trust strip.</div></div>
+      </div>
+      <p class="meta" style="margin-top:36px;font-size:14px;letter-spacing:.06em;color:#5f5f5f;text-transform:none;font-family:Aeonik">Page width: 1340px desktop · 360px mobile design unit.</p>
+    </div>
+    <div class="slide-num">08 / 15 — Spacing</div>
+    <div class="brand-mark"><img src="trs-logo.svg" alt="TRS"/></div>
+  </section>
+
+  <!-- 09 — Corners / borders / shadows -->
+  <section data-screen-label="09 Corners">
+    <div class="pad">
+      <p class="eyebrow">Corners, borders, shadows</p>
+      <h2 class="section" style="margin-top:18px">Square corners. Borders, not shadows.</h2>
+      <div class="rad-grid">
+        <div class="rad"><div class="demo" style="border-radius:0">0px</div><div class="lbl">Default</div><div class="use">Inputs, surfaces, cards.</div></div>
+        <div class="rad"><div class="demo" style="border-radius:2px">2px</div><div class="lbl">CTA</div><div class="use">Primary buttons.</div></div>
+        <div class="rad"><div class="demo" style="border-radius:8px">8px</div><div class="lbl">Pricing pack</div><div class="use">Pricing cards only.</div></div>
+        <div class="rad"><div class="demo" style="border-radius:9999px">Pill</div><div class="lbl">Capsule</div><div class="use">Variant pickers, badges.</div></div>
+      </div>
+      <p class="meta" style="margin-top:56px;font-size:18px;letter-spacing:.06em;color:#1c1c1c;text-transform:none;font-family:Aeonik">
+        Default border: <code style="font-family:Aeonik;font-size:16px;color:var(--red)">1px solid #e4e4e4</code>. Selected: <code style="font-family:Aeonik;font-size:16px;color:var(--red)">2px solid #cf2437</code>. The only allowed shadow is <code style="font-family:Aeonik;font-size:16px;color:var(--red)">--trs-shadow-sm</code>, reserved for sticky/modal surfaces.
+      </p>
+    </div>
+    <div class="slide-num">09 / 15 — Corners</div>
+    <div class="brand-mark"><img src="trs-logo.svg" alt="TRS"/></div>
+  </section>
+
+  <!-- 10 — Buttons -->
+  <section data-screen-label="10 Buttons">
+    <div class="pad">
+      <p class="eyebrow">Buttons, pills, badges</p>
+      <h2 class="section" style="margin-top:18px">Three button styles. One pill. Two badges.</h2>
+      <div class="comp-block">
+        <div class="comp-row">
+          <div class="comp-label">Primary CTA</div>
+          <button class="btn-big primary">Add to cart</button>
+          <button class="btn-big primary" style="opacity:.5">Add to cart</button>
+        </div>
+        <div class="comp-row">
+          <div class="comp-label">Secondary &amp; dark</div>
+          <button class="btn-big secondary">View details</button>
+          <button class="btn-big dark">Shop now</button>
+        </div>
+        <div class="comp-row">
+          <div class="comp-label">Variant pills</div>
+          <button class="pill-big off">Small</button>
+          <button class="pill-big on">Medium</button>
+          <button class="pill-big off">Large</button>
+        </div>
+        <div class="comp-row">
+          <div class="comp-label">Badges</div>
+          <span class="badge-big r">Most popular</span>
+          <span class="badge-big k">Best value</span>
+          <span class="badge-big r">Save up to 30%</span>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">10 / 15 — Buttons</div>
+    <div class="brand-mark"><img src="trs-logo.svg" alt="TRS"/></div>
+  </section>
+
+  <!-- 11 — Pricing pack -->
+  <section data-screen-label="11 Pricing">
+    <div class="pad">
+      <p class="eyebrow">Pricing pack card</p>
+      <h2 class="section" style="margin-top:18px">Default, selected, badged.</h2>
+      <p class="lede">Default: 1px grey border, 8px radius. Selected: 2px red border, soft-pink fill, capsule badge floating above the top edge.</p>
+      <div class="pack-row">
+        <div class="pack">
+          <div class="ph">×1</div>
+          <h4>1 Slider</h4>
+          <p>£129.90 per slider</p>
+        </div>
+        <div class="pack sel">
+          <span class="b">Most popular</span>
+          <div class="ph">×2</div>
+          <h4>2 Sliders</h4>
+          <p>£103.92 per slider</p>
+          <div class="save">Save 20%</div>
+        </div>
+        <div class="pack">
+          <span class="b dk">Best value</span>
+          <div class="ph">×3</div>
+          <h4>3 Sliders</h4>
+          <p>£90.93 per slider</p>
+          <div class="save">Save 30%</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">11 / 15 — Pricing</div>
+    <div class="brand-mark"><img src="trs-logo.svg" alt="TRS"/></div>
+  </section>
+
+  <!-- 12 — Rating + stock -->
+  <section data-screen-label="12 Rating Stock">
+    <div class="pad">
+      <p class="eyebrow">Rating &amp; stock</p>
+      <h2 class="section" style="margin-top:18px">Stars and a stock dot.</h2>
+      <div class="ev-block">
+        <div class="ev-card">
+          <h5>Rating bar</h5>
+          <div class="row1">
+            <span class="stars">
+              <svg viewBox="0 0 18 18" fill="#cf2437"><polygon points="9,1 11.3,6.6 17,7 12.6,11 14,17 9,13.7 4,17 5.4,11 1,7 6.7,6.6"/></svg>
+              <svg viewBox="0 0 18 18" fill="#cf2437"><polygon points="9,1 11.3,6.6 17,7 12.6,11 14,17 9,13.7 4,17 5.4,11 1,7 6.7,6.6"/></svg>
+              <svg viewBox="0 0 18 18" fill="#cf2437"><polygon points="9,1 11.3,6.6 17,7 12.6,11 14,17 9,13.7 4,17 5.4,11 1,7 6.7,6.6"/></svg>
+              <svg viewBox="0 0 18 18" fill="#cf2437"><polygon points="9,1 11.3,6.6 17,7 12.6,11 14,17 9,13.7 4,17 5.4,11 1,7 6.7,6.6"/></svg>
+              <svg viewBox="0 0 18 18" fill="#cf2437"><polygon points="9,1 11.3,6.6 17,7 12.6,11 14,17 9,13.7 4,17 5.4,11 1,7 6.7,6.6"/></svg>
+            </span>
+            <span><b>50,000+</b> golfers rate this <b>4.8/5.0</b></span>
+          </div>
+          <p style="font-family:Aeonik;font-size:18px;color:var(--grey-700);margin:0;line-height:1.5">Five red stars. Sits above the H1.</p>
+        </div>
+        <div class="ev-card">
+          <h5>Stock indicator</h5>
+          <div class="stock">
+            <span class="dot"><span class="halo"></span><span class="core"></span></span>
+            <span>In stock — delivered to you by January 01</span>
+          </div>
+          <p style="font-family:Aeonik;font-size:18px;color:var(--grey-700);margin:0;line-height:1.5">Soft-halo green dot with delivery promise. Sits directly under the primary CTA.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">12 / 15 — Rating &amp; stock</div>
+    <div class="brand-mark"><img src="trs-logo.svg" alt="TRS"/></div>
+  </section>
+
+  <!-- 14 — Imagery -->
+  <section data-screen-label="14 Imagery">
+    <div class="pad">
+      <p class="eyebrow">Imagery</p>
+      <h2 class="section" style="margin-top:18px">Action photography. Product cutouts.</h2>
+      <div class="img-grid">
+        <div>
+          <div class="img-box"><img src="../../assets/figma_action.jpg" alt="Action shot"/></div>
+          <div class="img-meta" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:14px">
+            <div><b style="color:#1a8c1a;font-family:Aeonik;font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:6px">Do</b>Bright daylight. Real golfers, real courses, mid-swing. Bright, true colour.</div>
+            <div><b style="color:#cf2437;font-family:Aeonik;font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:6px">Don’t</b>Studio strobes, indoor putts, monochrome filters, motion blur, vignettes.</div>
+          </div>
+        </div>
+        <div>
+          <div class="img-box"><img src="../../assets/figma_pdp_main.png" alt="Product cutout"/></div>
+          <div class="img-meta" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:14px">
+            <div><b style="color:#1a8c1a;font-family:Aeonik;font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:6px">Do</b>Plain backgrounds. Single product or pack. Sharp, even lighting.</div>
+            <div><b style="color:#cf2437;font-family:Aeonik;font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:6px">Don’t</b>Styling props, painted backdrops, lifestyle staging, dramatic shadows.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">13 / 15 — Imagery</div>
+    <div class="brand-mark"><img src="trs-logo.svg" alt="TRS"/></div>
+  </section>
+
+  <!-- 15 — Brand in action -->
+  <section data-screen-label="15 Brand in action">
+    <div class="pad">
+      <p class="eyebrow">Brand in action</p>
+      <h2 class="section" style="margin-top:18px">The system, assembled.</h2>
+      <div class="ba-wrap">
+        <div class="ba-stage">
+          <div class="row1">
+            <span class="stars">
+              <svg viewBox="0 0 18 18" fill="#cf2437"><polygon points="9,1 11.3,6.6 17,7 12.6,11 14,17 9,13.7 4,17 5.4,11 1,7 6.7,6.6"/></svg>
+              <svg viewBox="0 0 18 18" fill="#cf2437"><polygon points="9,1 11.3,6.6 17,7 12.6,11 14,17 9,13.7 4,17 5.4,11 1,7 6.7,6.6"/></svg>
+              <svg viewBox="0 0 18 18" fill="#cf2437"><polygon points="9,1 11.3,6.6 17,7 12.6,11 14,17 9,13.7 4,17 5.4,11 1,7 6.7,6.6"/></svg>
+              <svg viewBox="0 0 18 18" fill="#cf2437"><polygon points="9,1 11.3,6.6 17,7 12.6,11 14,17 9,13.7 4,17 5.4,11 1,7 6.7,6.6"/></svg>
+              <svg viewBox="0 0 18 18" fill="#cf2437"><polygon points="9,1 11.3,6.6 17,7 12.6,11 14,17 9,13.7 4,17 5.4,11 1,7 6.7,6.6"/></svg>
+            </span>
+            <span>50,000+ golfers · 4.8 / 5.0</span>
+          </div>
+          <h3>TRS Slider</h3>
+          <p class="sub">Designed by Robert Rock. Used on tour by Tommy Fleetwood and Cam Smith.</p>
+          <div class="ph"><img src="../../assets/figma_pdp_main.png" alt="Product"/></div>
+          <div class="pills">
+            <span class="p">Small</span>
+            <span class="p on">Medium</span>
+            <span class="p">Large</span>
+          </div>
+          <button class="cta">Add to cart · £129.90</button>
+          <div class="stk"><span class="d"><span class="h"></span><span class="c"></span></span>In stock — delivered to you by January 01.</div>
+        </div>
+        <div class="ba-callouts">
+          <div class="callout"><div class="num">01</div><div class="body"><b>Eyebrow + stars</b><span>Aeonik 700, 14px, +16% letter-spacing, brand red.</span></div></div>
+          <div class="callout"><div class="num">02</div><div class="body"><b>H1 product name</b><span>Aeonik 500, title case, −2% letter-spacing.</span></div></div>
+          <div class="callout"><div class="num">03</div><div class="body"><b>Body lede</b><span>Aeonik 400, ink, no grey. Specifics over superlatives.</span></div></div>
+          <div class="callout"><div class="num">04</div><div class="body"><b>Variant pills</b><span>Capsule radius. Selected fills ink; unselected stays outline.</span></div></div>
+          <div class="callout"><div class="num">05</div><div class="body"><b>Primary CTA</b><span>Brand red, 2px radius, 1px <code style="font-family:Aeonik;color:var(--red);font-size:14px">#9c1827</code> border, uppercase.</span></div></div>
+          <div class="callout"><div class="num">06</div><div class="body"><b>Stock dot</b><span>Success green only. Not used anywhere else.</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">14 / 15 — Brand in action</div>
+    <div class="brand-mark"><img src="trs-logo.svg" alt="TRS"/></div>
+  </section>
+
+  <!-- 14 — Files -->
+  <section data-screen-label="14 Files">
+    <div class="pad">
+      <p class="eyebrow">Files</p>
+      <h2 class="section" style="margin-top:18px">Where to find each piece.</h2>
+      <div class="files-list">
+        <div class="file"><b>README.md</b><span>Brand &amp; system reference</span></div>
+        <div class="file"><b>SKILL.md</b><span>Agent rules</span></div>
+        <div class="file"><b>colors_and_type.css</b><span>Tokens &amp; component classes</span></div>
+        <div class="file"><b>fonts/</b><span>Aeonik (3 weights)</span></div>
+        <div class="file"><b>assets/</b><span>Logos, icons, photography</span></div>
+        <div class="file"><b>preview/</b><span>14 design-system cards</span></div>
+        <div class="file"><b>ui_kits/shop/</b><span>PDP recreation</span></div>
+        <div class="file"><b>decks/foundation/</b><span>This deck</span></div>
+      </div>
+    </div>
+    <div class="slide-num">15 / 15 — Files</div>
+    <div class="brand-mark"><img src="trs-logo.svg" alt="TRS"/></div>
+  </section>
+
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+</body>
+</html>

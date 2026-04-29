@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>body{margin:0;padding:20px;background:#fff;font-family:var(--trs-font-display);color:var(--trs-ink)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{border:1px solid var(--trs-grey-300);padding:14px}
+.card.sel{border:2px solid var(--trs-red);background:var(--trs-red-tint);padding:13px}
+.card h5{margin:0 0 4px;font-size:13px;font-weight:700}
+.card p{margin:0;font-size:11px;color:var(--trs-grey-700);line-height:1.4}
+.card.shadow{box-shadow:0 8px 24px rgba(18,18,18,.08);border-color:transparent}
+.lbl{font-family:var(--trs-font-mono);font-size:10px;color:var(--trs-grey-700);margin-bottom:6px}
+</style></head><body>
+<div class="grid">
+  <div><div class="lbl">card / default</div><div class="card"><h5>Default</h5><p>1px grey border, square corners, no shadow.</p></div></div>
+  <div><div class="lbl">card / selected</div><div class="card sel"><h5>Selected</h5><p>2px red border, soft pink fill.</p></div></div>
+  <div><div class="lbl">card / floating (rare)</div><div class="card shadow"><h5>Floating</h5><p>shadow-md — only for sticky/modal surfaces.</p></div></div>
+  <div><div class="lbl">callout / alert</div><div class="card" style="background:var(--trs-red-tint);border-color:var(--trs-red)"><h5 style="color:var(--trs-red)">Heads-up</h5><p>Soft pink-red background with brand-red ink.</p></div></div>
+</div>
+</body></html>
