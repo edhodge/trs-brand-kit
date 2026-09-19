@@ -15,23 +15,33 @@ TRS Golf is a UK direct-to-consumer brand selling **golf training aids** (the TR
 3. Browse `preview/` to see the system rendered: colour swatches, type ramp, buttons, pricing packs, badges, rating bar, spacing scale.
 4. If the user wants e-commerce surfaces, **clone or extend `ui_kits/shop/`**. The PDP is broken into small JSX components (Header, ProductGallery, PricingPacks, VariantPicker, BuyBox, FAQ, Footer) — re-use them.
 
+## Where the numbers live
+
+**`tokens.json` is the single source of truth** (measured from the live site). It generates `colors_and_type.css` and the `DESIGN.md` frontmatter via `python3 gen_kit.py`. **Never hardcode a brand number** — link `colors_and_type.css` and use the CSS variables / classes. If a value needs to change, edit `tokens.json` and re-run the generator; every file updates together. This doc carries the *judgment* (what to do), not the raw values.
+
 ## Hard rules
 
-- **No emoji. Anywhere.** The product seriousness depends on it.
-- **No gradients on backgrounds.** Flat solids only. (`background_gradient` is empty in production.)
-- **No drop shadows on cards.** Use 1px borders for depth. The one allowed shadow (`--trs-shadow-sm`) is for sticky/modal surfaces only.
-- **CTAs are UPPERCASE**, with `letter-spacing: -0.02em` and 16px Aeonik 700. Primary CTA fills are `--trs-red` (`#cf2437`) with a `--trs-red-dark` border.
-- **Sharp corners by default.** Radii are `0` (default), `2px` (CTA softening), `8px` (pricing packs), `9999px` (capsule pills + badges). Don't invent new radii.
-- **Stars are red, never yellow.** Five filled stars in `#cf2437`.
-- **Title Case for H1s, sentence case below, ALL CAPS for buttons + badges.** Don't title-case a button or sentence-case a badge.
+- **No emoji. Anywhere.** The product seriousness depends on it. One exception: the 💥🎯✅ benefit triplet in Meta ad body copy (see `trs-fb-ad-copy`) — design/UI surfaces never.
+- **No gradients on backgrounds.** Flat solids only.
+- **ONE red.** `--trs-signal-red` is the only red — buttons, accents, stars, badges. The old brighter red is retired; never reintroduce a second red.
+- **Cards carry the soft shadow** `--trs-shadow-card` (ratified from live home + PDP). The old "flat, borders only" rule is dead.
+- **CTAs are UPPERCASE**, `--trs-ls-tight`, Aeonik medium (not bold). Primary fill `--trs-red` with a 1px `--trs-red-dark` border, `--trs-radius-cta` (renders square). Hover **dims to 88% opacity** — no colour change. Use `.btn.btn-primary`.
+- **Radii come from the tokens:** `--trs-radius-cta` (CTA), `--trs-radius-control` (inputs/secondary), `--trs-radius-card` (cards), `--trs-radius-pill` (capsule pills + badges). Don't invent new radii.
+- **Spacing is a 5px grid** — use `--trs-sp-1`…`--trs-sp-7`. Never a raw px gap.
+- **Every interactive element gets a focus ring** (`.btn` ships `:focus-visible` with a red outline) — the live site is missing this and it's an a11y fault to carry forward.
+- **Stars are red, never yellow.** Filled `--trs-signal-red`.
+- **Casing:** Title Case for the display heading, sentence case below, ALL CAPS for buttons + badges. Don't title-case a button or sentence-case a badge.
 - **Every benefit is outcome-led.** Don't write "Revolutionary technology" — write "Eliminate your slice forever".
 
 ## Type rules
 
-- Display: **Aeonik** 500 / 700, letter-spacing `-0.02em`.
-- Body: 14px Aeonik 400, line-height 1.5.
-- Eyebrow / mono labels: **Suisse Int'l** 11px, `letter-spacing: 0.04em`, UPPERCASE.
-- Use the helpers: `--trs-h1` (28px/500), `--trs-h2` (24/500), `--trs-h3` (20/500), `--trs-body-lg` (16/400), `--trs-body` (14/400), `--trs-eyebrow` (11/700).
+Aeonik throughout (Suisse Intl is a fallback only; if it renders as the primary body face the page failed to load Aeonik). The site renders **five roles** — there is no distinct H3/H5. Sizes/weights live in `tokens.json`; use the classes:
+
+- **`.display`** (or h1/h2) — the largest heading and every section title. Title Case.
+- **`.subhead`** (or h3) — secondary heading. Sentence case.
+- **`.eyebrow`** — uppercase kicker/label above a heading.
+- **body** (`<p>`) — the copy default.
+- **`.caption`** — fine print, `--trs-ink-caption`.
 
 ## Component vocabulary
 
@@ -40,7 +50,8 @@ TRS Golf is a UK direct-to-consumer brand selling **golf training aids** (the TR
 - **Dark CTA:** `.btn-dark` — for "SHOP NOW" patterns over imagery.
 - **Variant pills:** `<button class="pill" aria-checked="…">` — capsule, fills black when selected.
 - **Badges:** `<span class="badge">MOST POPULAR</span>` (red) / `.badge--dark` (black).
-- **Pricing packs:** see `preview/pricing-packs.html` and `ui_kits/shop/PricingPacks.jsx`. Selected = 2px red border + `#fff8f9` fill + capsule badge floating above the top edge.
+- **Pricing packs:** see `preview/pricing-packs.html` and `ui_kits/shop/PricingPacks.jsx`. Selected = red border + `#fff8f9` fill + capsule badge floating above the top edge.
+- **Card:** `<div class="card">` — white, `8px` radius, soft shadow `--trs-shadow-card`.
 - **Rating bar:** see `preview/rating-stock.html`. Five red stars + bold count + bold rating, on one line.
 - **Stock dot:** small green dot in a soft halo + delivery-promise sentence.
 

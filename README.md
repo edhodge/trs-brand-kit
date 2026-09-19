@@ -96,18 +96,18 @@ The palette is **monochrome plus signal red**. Almost every screen is white or o
 | Token | Hex | Use |
 | --- | --- | --- |
 | `--trs-red` | `#cf2437` | Primary brand red. Stars, badges, primary buttons (Figma-canonical). |
-| `--trs-red-bright` | `#fc364c` | Theme button red (slightly brighter). The CSS variable used in production. |
+| ~~`--trs-red-bright` `#fc364c`~~ | RETIRED 2026-09-19 | Was a stray second red; only survived on cart + 7-reasons. There is ONE red: `#cf2437`. |
 | `--trs-red-dark` | `#9c1827` | Border/shadow under red buttons. |
 | `--trs-red-tint` | `#fff8f9` | Soft pink-red surface (selected pack card, alert background). |
 | `--trs-ink` | `#161616` | Primary text. |
-| `--trs-ink-2` | `#222222` | Body alt / Shopify "scheme-1" text. |
+| `--trs-ink-2` | alias of `--trs-ink` | Kept as a compatibility alias; there is one ink, `#161616`. |
 | `--trs-ink-3` | `#212121` | Less-prominent ink. |
 | `--trs-grey-700` | `#5f5f5f` | Captions, secondary copy. |
 | `--trs-grey-500` | `#969696` | Borders on active controls. |
 | `--trs-grey-300` | `#e4e4e4` | Default borders. |
 | `--trs-surface` | `#ffffff` | Page. |
 | `--trs-surface-2` | `#f7f7f7` | Subtle section background. |
-| `--trs-surface-3` | `#f3f3f3` | Shopify "scheme-2" background. |
+| `--trs-surface-muted` | `#f8f8f8` | The subtle grey section band (measured; replaces the old `#f3f3f3`). |
 | `--trs-success` | `#5cd33f` | "In stock" dot. |
 | `--trs-info` | `#5794ee` | Generic info pill (rare). |
 | `--trs-blue` | `#334fb4` | Shopify "scheme-5" accent (rare). |
@@ -119,7 +119,7 @@ Backgrounds are **flat solids**. The codebase exposes a `background_gradient` sl
 - **Suisse Int'l** ships in the theme as a body fallback (woff2 imported into `assets/`) but the Figma file uses Aeonik throughout. We follow Figma and treat Aeonik as primary.
 - **Roboto** appears 5× in the Figma file — we treat that as legacy / system-font fallback and don't include it in the ramp.
 - Letter-spacing is consistently **-0.020em** (-2%) on display sizes and CTAs. Line-height is tight: `100%` on most display sizes, `18/16px` on buttons.
-- Body sits at 14/14 on mobile; H1 is 28px Medium, sub-heads 16px Medium.
+- Five type roles (measured): display 40px desktop / 30px mobile, sub-head 20/18, eyebrow 14/12 caps, body 15/14, caption 12. All Aeonik Medium/Regular. No distinct H3/H5 on-site.
 
 ### Spacing & layout
 - **Page width**: 1340px on desktop (Shopify setting), 360px design unit on mobile.
@@ -158,7 +158,7 @@ The brand is **sharp**. The Shopify theme sets `buttons_radius: 0`, `inputs_radi
 
 ### Cards
 - Square corners (or 8px on pricing packs).
-- Flat white fill, 1px grey border. **No drop shadow.**
+- White fill, 8px radius, soft card shadow `0 2px 8px rgba(0,0,0,0.2)` (ratified 2026-09-19 from the live home + PDP).
 - Selected state: 2px red border, light-red `#fff8f9` fill, "MOST POPULAR" capsule badge floating above the top edge.
 
 ### Layout rules
